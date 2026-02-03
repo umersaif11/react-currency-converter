@@ -1,16 +1,49 @@
-# React + Vite
+# React Currency Converter 💱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time currency conversion application built with React and Tailwind CSS. This project focuses on creating **Custom Hooks** for API handling, building reusable UI components, and managing data flow between parent and child components.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Real-Time Exchange Rates:** Fetches live currency data from an external API.
+- **Custom Hook Integration:** logic abstracted into a clean `useCurrencyInfo` hook.
+- **Two-Way Conversion:** "Swap" feature to instantly reverse the conversion direction.
+- **Reusable Components:** Modular `InputBox` component designed for scalability.
+- **Dynamic Dropdowns:** Automatically populates currency options based on API response.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Library:** React JS
+- **Styling:** Tailwind CSS
+- **Build Tool:** Vite
 
-## Expanding the ESLint configuration
+## 🧠 Concepts & Hooks Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project was built to master Custom Hooks and Component reusability. Here is how the core concepts are applied:
+
+- **`useState`**: Used heavily to manage the application state, including the `amount` to convert, the `from` and `to` currency selections, and the final `convertedAmount`.
+- **`useEffect`**: Implemented inside the custom hook to automatically trigger the API call whenever the selected `currency` dependency changes, ensuring data is always in sync.
+- **`Custom Hooks` (`useCurrencyInfo`)**: The core feature of this project. The API fetching logic is extracted into a standalone function, demonstrating how to create reusable logic that can be shared across components.
+- **Reusable Components & Props**: The UI uses a dedicated `<InputBox />` component. This demonstrates 
+- **"Lifting State Up"**—passing methods like `onAmountChange` and `onCurrencyChange` from the parent to the child to control the application state.
+
+## 🖥️ Screenshots
+
+**Currency Converter Interface**
+![Desktop view](./screenshots/cc.png)
+
+## 💻 How to Run Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/umersaif11/react-currency-converter.git](https://github.com//react-currency-converter.git)
+   ```
+
+2. Navigate to the project directory
+```bash
+   cd react-currency-converter
+```    
+3. Start the development server
+```bash
+   npm run dev
+```  
+   
